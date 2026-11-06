@@ -5,46 +5,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NYC Landmarks Virtual Tour</title>
+
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="site-title">NYC Landmarks</div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="site-title">
+            <a href="index.html">NYC Landmarks</a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#landmarks">Landmarks</a>
+        </nav>
+
     </header>
 
     <main>
-        <h1>NYC Landmarks Virtual Tour</h1>
 
-        <p class="intro">
-            This site highlights some interesting landmarks
-            across New York City's five boroughs.
-        </p>
+        <!-- SECTION 1: HERO -->
+        <section class="home-hero">
 
-        <section class="featured-landmark">
-            <h2>Featured Landmark: Statue of Liberty</h2>
+            <div class="hero-text">
 
-            <picture>
-                <source
-                    media="(max-width: 600px)"
-                    srcset="pexels-mora-versio-2150673251-34091093.jpg">
+                <h1>Explore NYC Landmarks</h1>
 
-                <source
-                    media="(min-width: 601px)"
-                    srcset="pexels-mora-versio-2150673251-34091093.jpg">
+                <p>
+                    Discover some of New York City's
+                    most memorable landmarks through
+                    photos, stories, and visitor information.
+                </p>
+
+                <a class="btn" href="#landmarks">
+                    Start Exploring
+                </a>
+
+            </div>
+
+            <div class="hero-image">
 
                 <img
                     src="pexels-mora-versio-2150673251-34091093.jpg"
-                    alt="Statue of Liberty viewed from below, looking up at the statue">
-            </picture>
+                    alt="Statue of Liberty viewed from below">
+
+            </div>
+
         </section>
 
-        <section class="video-section">
-            <h2>Watch a NYC Landmark Tour</h2>
+        <!-- SECTION 2: ABOUT THE TOUR -->
+        <section class="home-about" id="about">
 
             <div class="video-wrapper">
+
                 <iframe
                     src="https://www.youtube.com/embed/YrPN6eHYcFE"
                     title="NYC Landmark Tour video"
@@ -52,88 +72,258 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
+
             </div>
+
+            <div class="about-text">
+
+                <h2>About the Tour</h2>
+
+                <p>
+                    Welcome to the NYC Landmarks
+                    Virtual Tour. Explore iconic
+                    places across New York City
+                    and learn what makes each
+                    destination unique.
+                </p>
+
+                <p>
+                    Browse photographs, discover
+                    interesting facts, and find
+                    helpful information for your visit.
+                </p>
+
+            </div>
+
         </section>
 
-        <div class="landmarks-grid">
+        <!-- SECTION 3: FEATURED LANDMARK -->
+        <section class="featured-landmark">
 
-            <figure>
-                <h2>Wonder Wheel</h2>
-                <img
-                    src="pexels-kelsey-caroline-774981359-19122990.jpg"
-                    alt="Wonder Wheel ferris wheel at Coney Island">
-                <figcaption>
-                    <a href="https://www.pexels.com/photo/ferris-wheel-in-amusement-park-19122990/">
-                        Photo by Kelsey Caroline
+            <h2>Featured Landmark</h2>
+
+            <div class="featured-layout">
+
+                <div class="featured-text">
+
+                    <h3>Statue of Liberty</h3>
+
+                    <p>
+                        Discover one of New York City's
+                        most recognizable landmarks.
+                        Learn about its history and
+                        why it continues to welcome
+                        visitors from around the world.
+                    </p>
+
+                    <a class="btn" href="landmark-liberty.html">
+                        Explore Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-            <figure>
-                <h2>Roosevelt Island Tramway</h2>
-                <img
-                    src="pexels-loquellano-12404963.jpg"
-                    alt="Roosevelt Island Tramway leaving Manhattan">
-                <figcaption>
-                    <a href="https://www.pexels.com/photo/cable-car-above-city-street-12404963/">
-                        Photo by Raphael Loquellano
+                </div>
+
+                <picture>
+
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="pexels-mora-versio-2150673251-34091093.jpg">
+
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="pexels-mora-versio-2150673251-34091093.jpg">
+
+                    <img
+                        src="pexels-mora-versio-2150673251-34091093.jpg"
+                        alt="Statue of Liberty viewed from below, looking up at the statue">
+
+                </picture>
+
+            </div>
+
+        </section>
+
+        <!-- SECTION 4: EXPLORE LANDMARKS -->
+        <section class="landmarks-section" id="landmarks">
+
+            <h2>Explore the Landmarks</h2>
+
+            <div class="landmarks-grid">
+
+                <!-- CARD 1 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="pexels-kelsey-caroline-774981359-19122990.jpg"
+                        alt="Wonder Wheel Ferris wheel at Coney Island">
+
+                    <h3>Wonder Wheel</h3>
+
+                    <p>
+                        Explore a historic Ferris wheel
+                        overlooking Coney Island.
+                    </p>
+
+                    <a class="btn" href="landmark-wonder.html">
+                        View Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-            <figure>
-                <h2>Yankee Stadium</h2>
-                <img
-                    src="pexels-malcolmhill-12360516..jpg"
-                    alt="Yankee Stadium seen from the water with the stadium name visible">
-                <figcaption>
-                    <a href="https://www.pexels.com/photo/yankee-stadium-under-the-blue-sky-12360516/">
-                        Photo by Malcolm Hill
+                    <p class="photo-credit">
+                        <a href="https://www.pexels.com/photo/ferris-wheel-in-amusement-park-19122990/">
+                            Photo by Kelsey Caroline
+                        </a>
+                    </p>
+
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="pexels-loquellano-12404963.jpg"
+                        alt="Roosevelt Island Tramway leaving Manhattan">
+
+                    <h3>Roosevelt Island Tramway</h3>
+
+                    <p>
+                        Discover a scenic cable car
+                        ride above the East River.
+                    </p>
+
+                    <a class="btn" href="landmark-tram.html">
+                        View Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-            <figure>
-                <h2>Statue of Liberty</h2>
-                <img
-                    src="pexels-mora-versio-2150673251-34091093.jpg"
-                    alt="Statue of Liberty viewed from below, looking up at the statue">
-                <figcaption>
-                    <a href="https://www.pexels.com/photo/statue-of-liberty-in-new-york-city-usa-34091093/">
-                        Photo by Mora Versio
+                    <p class="photo-credit">
+                        <a href="https://www.pexels.com/photo/cable-car-above-city-street-12404963/">
+                            Photo by Raphael Loquellano
+                        </a>
+                    </p>
+
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="pexels-malcolmhill-12360516..jpg"
+                        alt="Yankee Stadium seen from the water">
+
+                    <h3>Yankee Stadium</h3>
+
+                    <p>
+                        Learn about one of New York
+                        City's famous sports landmarks.
+                    </p>
+
+                    <a class="btn" href="landmark-yankee.html">
+                        View Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-            <figure>
-                <h2>Empire State Building</h2>
-                <img
-                    src="pexels-tracehudson-2424391.jpg"
-                    alt="Empire State Building with lower Manhattan in the background">
-                <figcaption>
-                    <a href="https://www.pexels.com/photo/empire-state-building-2424391/">
-                        Photo by Trace Hudson
+                    <p class="photo-credit">
+                        <a href="https://www.pexels.com/photo/yankee-stadium-under-the-blue-sky-12360516/">
+                            Photo by Malcolm Hill
+                        </a>
+                    </p>
+
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="pexels-mora-versio-2150673251-34091093.jpg"
+                        alt="Statue of Liberty viewed from below">
+
+                    <h3>Statue of Liberty</h3>
+
+                    <p>
+                        Discover the history of this
+                        famous symbol of freedom.
+                    </p>
+
+                    <a class="btn" href="landmark-liberty.html">
+                        View Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-            <figure>
-                <h2>Staten Island Ferry</h2>
-                <img
-                    src="praswin-prakashan-YOCN1a1m_dg-unsplash.jpg"
-                    alt="Staten Island Ferry pulling into the dock">
-                <figcaption>
-                    <a href="https://unsplash.com/photos/a-large-ferry-boat-in-a-body-of-water-YOCN1a1m_dg">
-                        Photo by Praswin Prakashan
+                    <p class="photo-credit">
+                        <a href="https://www.pexels.com/photo/statue-of-liberty-in-new-york-city-usa-34091093/">
+                            Photo by Mora Versio
+                        </a>
+                    </p>
+
+                </article>
+
+                <!-- CARD 5 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="pexels-tracehudson-2424391.jpg"
+                        alt="Empire State Building in Manhattan">
+
+                    <h3>Empire State Building</h3>
+
+                    <p>
+                        Explore one of Manhattan's
+                        most recognizable skyscrapers.
+                    </p>
+
+                    <a class="btn" href="landmark-empire.html">
+                        View Landmark
                     </a>
-                </figcaption>
-            </figure>
 
-        </div>
+                    <p class="photo-credit">
+                        <a href="https://www.pexels.com/photo/empire-state-building-2424391/">
+                            Photo by Trace Hudson
+                        </a>
+                    </p>
+
+                </article>
+
+                <!-- CARD 6 -->
+                <article class="landmark-card">
+
+                    <img
+                        src="praswin-prakashan-YOCN1a1m_dg-unsplash.jpg"
+                        alt="Staten Island Ferry approaching the dock">
+
+                    <h3>Staten Island Ferry</h3>
+
+                    <p>
+                        Experience a famous ferry
+                        ride across New York Harbor.
+                    </p>
+
+                    <a class="btn" href="landmark-ferry.html">
+                        View Landmark
+                    </a>
+
+                    <p class="photo-credit">
+                        <a href="https://unsplash.com/photos/a-large-ferry-boat-in-a-body-of-water-YOCN1a1m_dg">
+                            Photo by Praswin Prakashan
+                        </a>
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>NYC Landmarks Virtual Tour</p>
+
         <p>Site by Hadjaaissat Barry</p>
+
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="#landmarks">Landmarks</a>
+        </nav>
+
     </footer>
+
 </body>
 </html>

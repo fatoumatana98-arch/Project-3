@@ -1,16 +1,22 @@
 
-/* General Styles */
+/* ==========================================
+   NYC LANDMARKS VIRTUAL TOUR
+   PROJECT 3 — COMPLETE STYLESHEET
+   ========================================== */
+
+/* 1. GENERAL STYLES */
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: var(--base-family);
-  font-size: var(--text-size-md);
-  line-height: var(--line-height-base);
-  color: var(--primary-text);
-  background-color: var(--primary-background);
+  font-family: var(--base-family, "DM Sans", Arial, sans-serif);
+  font-size: var(--text-size-md, 1rem);
+  line-height: var(--line-height-base, 1.6);
+  color: var(--primary-text, #292724);
+  background-color: var(--primary-background, #FFF8ED);
 }
 
 img,
@@ -20,80 +26,165 @@ video {
   height: auto;
 }
 
-/* Header */
-header {
-  background-color: var(--alternate-background);
-  color: var(--primary-text);
-  padding: var(--space-6);
-  text-align: center;
-  border-bottom: 3px solid var(--action);
+a {
+  color: var(--action, #A6422B);
 }
 
-.site-title {
-  font-family: var(--headings-family);
-  font-size: var(--text-size-xl);
-  font-weight: bold;
+a:hover {
+  color: var(--action-hover, #71301F);
 }
 
-/* Main Content */
-main {
-  max-width: var(--page-width);
-  margin: 0 auto;
-  padding: var(--space-8) var(--content-padding);
+a:focus-visible {
+  outline: 3px solid var(--action, #A6422B);
+  outline-offset: 4px;
 }
 
 h1,
-h2 {
-  font-family: var(--headings-family);
-  line-height: var(--line-height-headings);
-  color: var(--primary-text);
+h2,
+h3 {
+  font-family: var(--headings-family, "Playfair Display", Georgia, serif);
+  line-height: var(--line-height-headings, 1.2);
+  color: var(--primary-text, #292724);
 }
 
 h1 {
-  font-size: var(--text-size-3xl);
-  margin: 0 0 var(--space-4);
-  text-align: center;
+  font-size: var(--text-size-3xl, 2.441rem);
+  margin: 0 0 16px;
 }
 
-.intro {
-  max-width: 700px;
-  margin: 0 auto var(--section-spacing);
-  text-align: center;
+h2 {
+  font-size: var(--text-size-2xl, 1.953rem);
 }
 
-/* Featured Landmark */
-.featured-landmark {
-  margin-bottom: var(--section-spacing);
+h3 {
+  font-size: var(--text-size-xl, 1.563rem);
 }
 
-.featured-landmark h2,
-.video-section h2 {
-  font-size: var(--text-size-2xl);
-  margin: 0 0 var(--space-4);
-  text-align: center;
+/* 2. HEADER */
+
+header {
+  background-color: var(--alternate-background, #F1E8DA);
+  padding: var(--space-6, 24px);
+  border-bottom: 3px solid var(--action, #A6422B);
 }
 
-.featured-landmark picture {
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-title {
+  font-family: var(--headings-family, Georgia, serif);
+  font-size: var(--text-size-xl, 1.563rem);
+  font-weight: bold;
+}
+
+.site-title a {
+  color: var(--primary-text, #292724);
+  text-decoration: none;
+}
+
+.site-title span {
   display: block;
-  max-width: 700px;
-  margin: 0 auto;
+  font-family: var(--base-family, Arial, sans-serif);
+  font-size: var(--text-size-sm, 0.8rem);
+  font-weight: normal;
 }
 
-.featured-landmark img {
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: var(--primary-text, #292724);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-nav a:hover {
+  color: var(--action-hover, #71301F);
+  text-decoration: underline;
+}
+
+/* 3. MAIN CONTENT */
+
+main {
   width: 100%;
+  max-width: var(--page-width, 1200px);
+  margin: 0 auto;
+  padding: var(--space-8, 32px)
+           var(--content-padding, 24px);
+}
+
+/* ==========================================
+   HOMEPAGE
+   ========================================== */
+
+/* 4. HERO */
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+.home-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  text-align: left;
+}
+
+.hero-text p {
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+
+/* FULL HERO IMAGE — NO CROPPING */
+
+.hero-image {
+  min-width: 0;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
   border-radius: 8px;
 }
 
-/* Embedded YouTube Video */
-.video-section {
-  margin-bottom: var(--section-spacing);
+/* 5. ABOUT THE TOUR */
+
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 80px;
 }
+
+.home-about h2 {
+  margin-top: 0;
+}
+
+/* Responsive video */
 
 .video-wrapper {
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16 / 9;
   margin: 0 auto;
+}
+
+.home-about .video-wrapper {
+  max-width: none;
 }
 
 .video-wrapper iframe {
@@ -103,73 +194,498 @@ h1 {
   border: 0;
 }
 
-/* Landmarks Grid */
-.landmarks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: var(--grid-gap);
+/* 6. FEATURED LANDMARK */
+
+.featured-landmark {
+  margin-bottom: 80px;
 }
 
-/* Individual Landmark Cards */
-.landmarks-grid figure {
+.featured-landmark > h2 {
+  text-align: left;
+  margin: 0 0 24px;
+}
+
+.featured-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.featured-text h3 {
+  margin-top: 0;
+}
+
+/* FULL FEATURED IMAGE — NO CROPPING */
+
+.featured-layout picture {
+  display: block;
+  width: 100%;
+  max-width: none;
   margin: 0;
-  padding: var(--space-4);
-  background-color: var(--card-background);
-  border: 1px solid var(--alternate-background);
+}
+
+.featured-layout img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
   border-radius: 8px;
 }
 
-.landmarks-grid h2 {
-  margin: 0 0 var(--space-3);
-  font-size: var(--text-size-lg);
+/* 7. LANDMARKS SECTION */
+
+.landmarks-section {
+  margin-bottom: 64px;
 }
 
-.landmarks-grid img {
+.landmarks-section > h2 {
+  margin-bottom: 28px;
+}
+
+/* 8. LANDMARK GRID */
+
+.landmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap, 24px);
+}
+
+/* 9. LANDMARK CARDS */
+
+.landmark-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: var(--space-4, 16px);
+  background-color: var(--card-background, #FFFFFF);
+  border: 1px solid var(--alternate-background, #F1E8DA);
+  border-radius: 8px;
+  min-width: 0;
+}
+
+.landmark-card h3 {
+  font-size: var(--text-size-lg, 1.25rem);
+  margin: 0;
+}
+
+.landmark-card p {
+  margin: 0;
+}
+
+/* FULL CARD IMAGES — NO CROPPING */
+
+.landmark-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: 220px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background-color: var(--alternate-background, #F1E8DA);
   border-radius: 4px;
 }
 
-.landmarks-grid figcaption {
-  margin-top: var(--space-3);
-  font-size: var(--text-size-sm);
+.landmark-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
-.landmarks-grid a {
-  color: var(--action);
-  text-decoration: underline;
+.landmark-card .photo-credit {
+  font-size: var(--text-size-sm, 0.8rem);
 }
 
-.landmarks-grid a:hover {
-  color: var(--action-hover);
+.landmark-card .photo-credit a {
+  color: var(--action, #A6422B);
 }
 
-/* Footer */
-footer {
-  margin-top: var(--section-spacing);
-  padding: var(--space-6);
+/* 10. BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--action, #A6422B);
+  color: var(--button-text, #FFFFFF);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
   text-align: center;
-  background-color: var(--alternate-background);
-  color: var(--primary-text);
+  transition: background-color 0.2s ease;
 }
 
-/* Smaller Screens */
+.btn:hover {
+  background-color: var(--action-hover, #71301F);
+  color: #FFFFFF;
+}
+
+/* ==========================================
+   LANDMARK DETAIL PAGE
+   ========================================== */
+
+/* 11. PAGE CONTAINER */
+
+.landmark-page {
+  max-width: 1200px;
+}
+
+.landmark-page h1 {
+  text-align: left;
+}
+
+/* 12. INTRODUCTION */
+
+.landmark-intro {
+  max-width: 850px;
+  margin-bottom: 48px;
+}
+
+.landmark-intro .eyebrow {
+  color: var(--action, #A6422B);
+  font-size: var(--text-size-sm, 0.8rem);
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.landmark-intro h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.1;
+  margin: 16px 0 24px;
+}
+
+.landmark-intro .tagline {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.landmark-intro p {
+  max-width: 750px;
+}
+
+/* 13. LANDMARK HERO — FULL IMAGE */
+
+.landmark-hero {
+  margin: 0 0 64px;
+}
+
+.landmark-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.landmark-page figcaption {
+  margin-top: 10px;
+  font-size: var(--text-size-sm, 0.8rem);
+}
+
+.landmark-page figcaption a {
+  color: var(--action, #A6422B);
+}
+
+/* 14. ABOUT + VISITOR INFO */
+
+.landmark-content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.landmark-about h2,
+.visitor-info h2,
+.landmark-directions h2,
+.landmark-more-info h2,
+.landmark-gallery h2 {
+  font-size: var(--text-size-2xl, 1.953rem);
+  margin: 0 0 24px;
+}
+
+.landmark-about p {
+  margin-bottom: 24px;
+}
+
+.visitor-info {
+  background-color: var(--alternate-background, #F1E8DA);
+  padding: 28px;
+  align-self: start;
+  border-left: 4px solid var(--action, #A6422B);
+}
+
+.visitor-info h2 {
+  font-size: var(--text-size-xl, 1.563rem);
+}
+
+.visitor-info p {
+  margin-bottom: 20px;
+}
+
+/* 15. DIRECTIONS */
+
+.landmark-directions {
+  margin-bottom: 48px;
+}
+
+.landmark-directions ul {
+  padding-left: 24px;
+}
+
+.landmark-directions li {
+  margin-bottom: 12px;
+}
+
+.landmark-directions a,
+.landmark-more-info a,
+.landmark-about a {
+  color: var(--action, #A6422B);
+}
+
+.landmark-directions a:hover,
+.landmark-more-info a:hover,
+.landmark-about a:hover {
+  color: var(--action-hover, #71301F);
+}
+
+/* 16. MORE INFORMATION */
+
+.landmark-more-info {
+  margin-bottom: 64px;
+}
+
+.landmark-more-info ul {
+  padding-left: 24px;
+}
+
+.landmark-more-info li {
+  margin-bottom: 12px;
+}
+
+/* 17. IMAGE GALLERY */
+
+.landmark-gallery {
+  margin: 64px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+
+/* FULL GALLERY IMAGES — NO CROPPING */
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background-color: var(--alternate-background, #F1E8DA);
+  border-radius: 4px;
+}
+
+.gallery-grid figcaption {
+  margin-top: 10px;
+}
+
+/* 18. PREVIOUS / NEXT BUTTONS */
+
+.landmark-pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid var(--alternate-background, #F1E8DA);
+}
+
+.landmark-pagination .btn {
+  padding: 14px 24px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  margin-top: var(--section-spacing, 64px);
+  padding: var(--space-6, 24px);
+  text-align: center;
+  background-color: var(--alternate-background, #F1E8DA);
+  color: var(--primary-text, #292724);
+}
+
+.site-footer nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.site-footer a {
+  color: var(--action, #A6422B);
+}
+
+.site-footer a:hover {
+  color: var(--action-hover, #71301F);
+}
+
+/* ==========================================
+   TABLET — 601px TO 900px
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .landmarks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-hero,
+  .home-about,
+  .featured-layout {
+    gap: 28px;
+  }
+}
+
+/* ==========================================
+   TABLET / SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .landmark-intro {
+    margin-bottom: 32px;
+  }
+
+  .landmark-intro h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .landmark-hero {
+    margin-bottom: 40px;
+  }
+
+  .landmark-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   MOBILE — 600px AND BELOW
+   ========================================== */
+
 @media (max-width: 600px) {
+
   main {
-    padding: var(--space-6) var(--space-4);
+    padding: var(--space-6, 24px)
+             var(--space-4, 16px);
   }
 
-  h1 {
-    font-size: var(--text-size-2xl);
+  /* Homepage sections */
+
+  .home-hero,
+  .home-about,
+  .featured-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
   }
 
-  .featured-landmark h2,
-  .video-section h2 {
-    font-size: var(--text-size-xl);
+  /* Hero image appears first */
+
+  .hero-image {
+    order: -1;
   }
+
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Featured image appears first */
+
+  .featured-layout picture {
+    order: -1;
+  }
+
+  /* Landmark cards */
 
   .landmarks-grid {
     grid-template-columns: 1fr;
+  }
+
+  .landmark-card {
+    padding: 16px;
+  }
+
+  .landmark-card img {
+    height: auto;
+    max-height: none;
+  }
+
+  /* Landmark detail page */
+
+  .landmark-intro h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .landmark-intro .tagline {
+    font-size: 1.25rem;
+  }
+
+  .landmark-hero {
+    margin-bottom: 36px;
+  }
+
+  .visitor-info {
+    padding: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .gallery-grid img {
+    height: auto;
+    max-height: none;
+  }
+
+  /* Previous / Next buttons */
+
+  .landmark-pagination {
+    flex-direction: column;
+  }
+
+  .landmark-pagination .btn {
+    width: 100%;
+  }
+
+  .site-nav {
+    gap: 16px;
   }
 }
