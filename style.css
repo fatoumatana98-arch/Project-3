@@ -1,7 +1,7 @@
 
 /* ==========================================
    NYC LANDMARKS VIRTUAL TOUR
-   PROJECT 3 — COMPLETE STYLESHEET
+   PROJECT 3 — MOBILE-FIRST STYLESHEET
    ========================================== */
 
 /* 1. GENERAL STYLES */
@@ -48,19 +48,19 @@ h3 {
 }
 
 h1 {
-  font-size: var(--text-size-3xl, 2.441rem);
-  margin: 0 0 16px;
+  font-size: var(--text-size-2xl, 1.953rem);
+  margin: 0 0 var(--space-4, 16px);
 }
 
 h2 {
-  font-size: var(--text-size-2xl, 1.953rem);
-}
-
-h3 {
   font-size: var(--text-size-xl, 1.563rem);
 }
 
-/* 2. HEADER */
+h3 {
+  font-size: var(--text-size-lg, 1.25rem);
+}
+
+/* 2. HEADER — MOBILE DEFAULT */
 
 header {
   background-color: var(--alternate-background, #F1E8DA);
@@ -70,9 +70,9 @@ header {
 
 .site-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .site-title {
@@ -96,7 +96,7 @@ header {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 16px;
 }
 
 .site-nav a {
@@ -110,64 +110,64 @@ header {
   text-decoration: underline;
 }
 
-/* 3. MAIN CONTENT */
+/* 3. MAIN CONTENT — MOBILE DEFAULT */
 
 main {
   width: 100%;
   max-width: var(--page-width, 1200px);
   margin: 0 auto;
-  padding: var(--space-8, 32px)
-           var(--content-padding, 24px);
+  padding: var(--space-6, 24px)
+           var(--space-4, 16px);
 }
 
 /* ==========================================
    HOMEPAGE
    ========================================== */
 
-/* 4. HERO */
+/* 4. HERO — ONE COLUMN */
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
+  gap: 24px;
   align-items: center;
-  gap: 48px;
-  margin-bottom: 80px;
+  margin-bottom: var(--section-spacing, 48px);
 }
 
 .home-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 8vw, 2.5rem);
   text-align: left;
 }
 
 .hero-text p {
   max-width: 480px;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6, 24px);
 }
 
-/* FULL HERO IMAGE — NO CROPPING */
+/* Show image first on mobile */
 
 .hero-image {
   min-width: 0;
+  order: -1;
 }
 
 .hero-image img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
   border-radius: 8px;
 }
 
-/* 5. ABOUT THE TOUR */
+/* 5. ABOUT THE TOUR — ONE COLUMN */
 
 .home-about {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 48px;
-  margin-bottom: 80px;
+  gap: 24px;
+  margin-bottom: var(--section-spacing, 48px);
 }
 
 .home-about h2 {
@@ -194,42 +194,42 @@ main {
   border: 0;
 }
 
-/* 6. FEATURED LANDMARK */
+/* 6. FEATURED LANDMARK — ONE COLUMN */
 
 .featured-landmark {
-  margin-bottom: 80px;
+  margin-bottom: var(--section-spacing, 48px);
 }
 
 .featured-landmark > h2 {
   text-align: left;
-  margin: 0 0 24px;
+  margin: 0 0 var(--space-6, 24px);
 }
 
 .featured-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 48px;
+  gap: 24px;
 }
 
 .featured-text h3 {
   margin-top: 0;
 }
 
-/* FULL FEATURED IMAGE — NO CROPPING */
+/* Image first on mobile */
 
 .featured-layout picture {
   display: block;
   width: 100%;
   max-width: none;
   margin: 0;
+  order: -1;
 }
 
 .featured-layout img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -238,18 +238,18 @@ main {
 /* 7. LANDMARKS SECTION */
 
 .landmarks-section {
-  margin-bottom: 64px;
+  margin-bottom: var(--section-spacing, 48px);
 }
 
 .landmarks-section > h2 {
-  margin-bottom: 28px;
+  margin-bottom: var(--space-6, 24px);
 }
 
-/* 8. LANDMARK GRID */
+/* 8. LANDMARK GRID — ONE COLUMN */
 
 .landmarks-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--grid-gap, 24px);
 }
 
@@ -275,12 +275,12 @@ main {
   margin: 0;
 }
 
-/* FULL CARD IMAGES — NO CROPPING */
+/* Full images — no cropping */
 
 .landmark-card img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: auto;
   aspect-ratio: auto;
   object-fit: contain;
   background-color: var(--alternate-background, #F1E8DA);
@@ -337,7 +337,7 @@ main {
 
 .landmark-intro {
   max-width: 850px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .landmark-intro .eyebrow {
@@ -349,13 +349,13 @@ main {
 }
 
 .landmark-intro h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 12vw, 3.5rem);
   line-height: 1.1;
   margin: 16px 0 24px;
 }
 
 .landmark-intro .tagline {
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 24px;
@@ -368,14 +368,13 @@ main {
 /* 13. LANDMARK HERO — FULL IMAGE */
 
 .landmark-hero {
-  margin: 0 0 64px;
+  margin: 0 0 36px;
 }
 
 .landmark-hero img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -390,13 +389,13 @@ main {
   color: var(--action, #A6422B);
 }
 
-/* 14. ABOUT + VISITOR INFO */
+/* 14. ABOUT + VISITOR INFO — ONE COLUMN */
 
 .landmark-content {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 48px;
-  margin-bottom: 64px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
 .landmark-about h2,
@@ -414,7 +413,7 @@ main {
 
 .visitor-info {
   background-color: var(--alternate-background, #F1E8DA);
-  padding: 28px;
+  padding: 20px;
   align-self: start;
   border-left: 4px solid var(--action, #A6422B);
 }
@@ -467,7 +466,7 @@ main {
   margin-bottom: 12px;
 }
 
-/* 17. IMAGE GALLERY */
+/* 17. IMAGE GALLERY — ONE COLUMN */
 
 .landmark-gallery {
   margin: 64px 0;
@@ -475,8 +474,8 @@ main {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .gallery-grid figure {
@@ -484,12 +483,10 @@ main {
   min-width: 0;
 }
 
-/* FULL GALLERY IMAGES — NO CROPPING */
-
 .gallery-grid img {
   display: block;
   width: 100%;
-  height: 250px;
+  height: auto;
   aspect-ratio: auto;
   object-fit: contain;
   background-color: var(--alternate-background, #F1E8DA);
@@ -504,14 +501,14 @@ main {
 
 .landmark-pagination {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
   padding-top: 32px;
   border-top: 1px solid var(--alternate-background, #F1E8DA);
 }
 
 .landmark-pagination .btn {
+  width: 100%;
   padding: 14px 24px;
 }
 
@@ -543,149 +540,145 @@ footer {
 }
 
 /* ==========================================
-   TABLET — 601px TO 900px
+   TABLET — 601px AND UP
    ========================================== */
 
-@media (max-width: 900px) {
+@media (min-width: 601px) {
+
+  main {
+    padding: var(--space-8, 32px)
+             var(--content-padding, 24px);
+  }
+
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .site-nav {
+    gap: 24px;
+  }
+
+  /* Homepage two-column sections */
+
+  .home-hero,
+  .home-about,
+  .featured-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .home-hero,
+  .home-about,
+  .featured-landmark {
+    margin-bottom: 64px;
+  }
+
+  .hero-image,
+  .featured-layout picture {
+    order: 0;
+  }
+
+  /* Two-column landmark cards */
 
   .landmarks-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .home-hero,
-  .home-about,
-  .featured-layout {
-    gap: 28px;
-  }
-}
-
-/* ==========================================
-   TABLET / SMALL SCREENS
-   ========================================== */
-
-@media (max-width: 768px) {
-
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .landmark-card img {
+    height: 220px;
   }
 
-  .landmark-intro {
-    margin-bottom: 32px;
-  }
+  /* Wonder Wheel layout */
 
   .landmark-intro h1 {
-    font-size: clamp(2.5rem, 11vw, 4rem);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
+
+  .landmark-intro .tagline {
+    font-size: clamp(1.25rem, 3vw, 2rem);
   }
 
   .landmark-hero {
     margin-bottom: 40px;
   }
 
-  .landmark-content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
+  .visitor-info {
+    padding: 28px;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
+
+  .gallery-grid img {
+    height: 250px;
+  }
+
+  .landmark-pagination {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .landmark-pagination .btn {
+    width: auto;
+  }
 }
 
 /* ==========================================
-   MOBILE — 600px AND BELOW
+   DESKTOP — 901px AND UP
    ========================================== */
 
-@media (max-width: 600px) {
-
-  main {
-    padding: var(--space-6, 24px)
-             var(--space-4, 16px);
-  }
-
-  /* Homepage sections */
+@media (min-width: 901px) {
 
   .home-hero,
   .home-about,
   .featured-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
+    gap: 48px;
   }
 
-  /* Hero image appears first */
-
-  .hero-image {
-    order: -1;
+  .home-hero,
+  .home-about,
+  .featured-landmark {
+    margin-bottom: 80px;
   }
 
   .home-hero h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
   }
 
-  /* Featured image appears first */
-
-  .featured-layout picture {
-    order: -1;
-  }
-
-  /* Landmark cards */
+  /* Three-column landmark cards */
 
   .landmarks-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .landmark-card {
-    padding: 16px;
+  /* Two-column detail content */
+
+  .landmark-content {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 48px;
+    margin-bottom: 64px;
   }
 
-  .landmark-card img {
-    height: auto;
-    max-height: none;
+  .landmark-intro {
+    margin-bottom: 48px;
   }
-
-  /* Landmark detail page */
 
   .landmark-intro h1 {
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
-  }
-
-  .landmark-intro .tagline {
-    font-size: 1.25rem;
+    font-size: clamp(3rem, 8vw, 6rem);
   }
 
   .landmark-hero {
-    margin-bottom: 36px;
+    margin-bottom: 64px;
   }
 
-  .visitor-info {
-    padding: 20px;
-  }
+  /* Three-column gallery */
 
   .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .gallery-grid img {
-    height: auto;
-    max-height: none;
-  }
-
-  /* Previous / Next buttons */
-
-  .landmark-pagination {
-    flex-direction: column;
-  }
-
-  .landmark-pagination .btn {
-    width: 100%;
-  }
-
-  .site-nav {
-    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
 }
