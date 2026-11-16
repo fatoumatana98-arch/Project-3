@@ -10,11 +10,12 @@
 
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER AND RESPONSIVE NAVIGATION -->
     <header class="site-header">
 
         <div class="site-title">
@@ -23,9 +24,14 @@
         </div>
 
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="#about">About</a>
-            <a href="#landmarks">Landmarks</a>
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="landmark-wonder.html">Wonder Wheel</a>
+            <a href="landmark-tram.html">Tramway</a>
+            <a href="landmark-yankee.html">Yankee Stadium</a>
+            <a href="landmark-liberty.html">Statue of Liberty</a>
+            <a href="landmark-empire.html">Empire State Building</a>
+            <a href="landmark-ferry.html">Staten Island Ferry</a>
         </nav>
 
     </header>
@@ -52,11 +58,9 @@
             </div>
 
             <div class="hero-image">
-
                 <img
                     src="pexels-mora-versio-2150673251-34091093.jpg"
                     alt="Statue of Liberty viewed from below">
-
             </div>
 
         </section>
@@ -65,7 +69,6 @@
         <section class="home-about" id="about">
 
             <div class="video-wrapper">
-
                 <iframe
                     src="https://www.youtube.com/embed/YrPN6eHYcFE"
                     title="NYC Landmark Tour video"
@@ -73,7 +76,6 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
-
             </div>
 
             <div class="about-text">
@@ -124,7 +126,6 @@
                 </div>
 
                 <picture>
-
                     <source
                         media="(max-width: 600px)"
                         srcset="pexels-mora-versio-2150673251-34091093.jpg">
@@ -135,8 +136,7 @@
 
                     <img
                         src="pexels-mora-versio-2150673251-34091093.jpg"
-                        alt="Statue of Liberty viewed from below, looking up at the statue">
-
+                        alt="Statue of Liberty viewed from below">
                 </picture>
 
             </div>
