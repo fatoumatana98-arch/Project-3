@@ -1,6 +1,6 @@
 
 /* =====================================
-   ACTIVITY 3: RESPONSIVE NAVIGATION
+   ACTIVITY 3: DROPDOWN NAVIGATION
    NYC LANDMARKS VIRTUAL TOUR
    ===================================== */
 
@@ -33,7 +33,7 @@
     font-size: 0.875rem;
 }
 
-/* NAVIGATION LINKS */
+/* MAIN NAVIGATION */
 
 .site-nav {
     display: flex;
@@ -44,7 +44,8 @@
     width: 100%;
 }
 
-.site-nav a {
+.site-nav > a,
+.landmarks-dropdown > summary {
     display: inline-block;
     padding: 0.6rem 0.8rem;
     color: #292724;
@@ -52,12 +53,69 @@
     border-radius: 0.4rem;
     font-weight: 500;
     line-height: 1.4;
-    text-align: center;
+    cursor: pointer;
 }
 
-/* HOVER */
+/* DROPDOWN CONTAINER */
 
-.site-nav a:hover {
+.landmarks-dropdown {
+    position: relative;
+}
+
+.landmarks-dropdown > summary {
+    list-style: none;
+}
+
+.landmarks-dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.landmarks-dropdown > summary::after {
+    content: " ▾";
+}
+
+.landmarks-dropdown[open] > summary::after {
+    content: " ▴";
+}
+
+/* DROPDOWN MENU */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+
+    width: max-content;
+    max-width: min(90vw, 280px);
+    margin: 0;
+    padding: 0.5rem;
+
+    list-style: none;
+    background-color: #FFF8ED;
+    border: 1px solid #D8C9B5;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #292724;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    overflow-wrap: break-word;
+}
+
+/* HOVER EFFECT */
+
+.site-nav > a:hover,
+.landmarks-dropdown > summary:hover,
+.dropdown-menu a:hover {
     background-color: #A6422B;
     color: #FFFFFF;
 }
@@ -70,12 +128,38 @@
     font-weight: 700;
 }
 
+/* ACTIVE LANDMARK DROPDOWN */
+
+.landmarks-dropdown:has(a[aria-current="page"]) > summary {
+    color: #A6422B;
+    font-weight: 700;
+}
+
 /* KEYBOARD ACCESSIBILITY */
 
 .site-nav a:focus-visible,
+.landmarks-dropdown > summary:focus-visible,
 .site-title a:focus-visible {
     outline: 3px solid #A6422B;
     outline-offset: 3px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 1rem;
+    }
+
+    .site-nav {
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        right: 50%;
+        transform: translateX(50%);
+        max-width: min(90vw, 260px);
+    }
 }
 
 /* TABLET */
@@ -83,10 +167,6 @@
 @media (min-width: 601px) {
     .site-header {
         padding: 1.25rem 2rem;
-    }
-
-    .site-nav {
-        gap: 0.75rem;
     }
 }
 
